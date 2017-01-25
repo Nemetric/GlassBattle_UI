@@ -47,7 +47,7 @@
     <div class="row">
         <div class="col-lg-offset-4">
             <br />
-            <button type="button" class="btn btn-lg col-lg-6"><span class="glyphicon glyphicon-tint" aria-hidden="true"></span>    Change Color</button>
+            <button type="button" class="btn btn-lg col-lg-6" id="btnSubmit"><span class="glyphicon glyphicon-tint" aria-hidden="true"></span>    Change Color</button>
         </div>
     </div>
 
@@ -55,6 +55,28 @@
         <script src="js/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#btnSubmit").click(function () {
+                var color = $('#html5colorpicker').val();
+                var id = 1;
+
+                alert(color);
+
+                var url = "http://localhost:58592/ui/ChangeColor/" + id + "?color=" + encodeURIComponent(color);
+                
+                $.get(url, function (data) {
+                    alert(data);
+                });
+
+            });
+
+        });
+
+    </script>
 
 </body>
 
