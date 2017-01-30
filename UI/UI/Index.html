@@ -38,6 +38,13 @@
     </div>
 
     <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <br />
+            <textarea class="form-control" id="pasta" rows="3"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-lg-6 col-lg-offset-3" >
             <br />
             <input id="html5colorpicker" value="#ff9900" style="width:100%;" type="color">
@@ -63,10 +70,12 @@
             $("#btnSubmit").click(function () {
                 var color = $('#html5colorpicker').val();
                 var id = 1;
+                var Text = document.getElementById('pasta').value;
 
                 alert(color);
+                alert(text);
 
-                var url = "http://localhost:58592/ui/ChangeColor/" + id + "?color=" + encodeURIComponent(color);
+                var url = "http://localhost:58592/ui/ChangeColor/" + id + "?color=" + encodeURIComponent(color) + "&text=" + encodeURIComponent(Text);
                 
                 $.get(url, function (data) {
                     alert(data);
