@@ -40,7 +40,10 @@
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3" >
             <br />
+            <input id="TextBox" type="text" class="form-control">
+            <br>
             <input id="html5colorpicker" value="#ff9900" style="width:100%;" type="color">
+            <br />
         </div>
     </div>
 
@@ -63,8 +66,10 @@
             $("#btnSubmit").click(function () {
                 var color = $('#html5colorpicker').val();
                 var id = 1;
+                var Text = "";
 
                 alert(color);
+                alert(TextBox);
 
                 var url = "http://localhost:58592/ui/ChangeColor/" + id + "?color=" + encodeURIComponent(color);
                 
