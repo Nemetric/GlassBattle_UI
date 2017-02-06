@@ -66,20 +66,20 @@
             $("#btnSubmit").click(function () {
                 var color = $('#html5colorpicker').val();
                 var id = 1;
-                var Text = "";
+                var text = $('#TextBox').val();
 
-                alert(color);
-                alert(TextBox);
+                //alert(color);
+                alert(text);
 
-                var url = "http://localhost:58592/ui/ChangeColor/" + id + "?color=" + encodeURIComponent(color);
-                
+                var url = "http://localhost:58592/ui/ChangeColor/" + id + "?color=" + encodeURIComponent(color) + "&text=" + encodeURIComponent(text);
+                alert(url);
+
                 $.get(url, function (data) {
                     alert(data);
                 });
 
+                });
             });
-
-        });
 
     </script>
 
