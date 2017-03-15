@@ -12,7 +12,8 @@
     <div class="col-lg-6">
         <br />
         <h4 class="text-center">Type your name here.</h4>
-        <input type="password" class="form-control" id="pwd" style="width:100%;">
+        <input type="text" class="form-control" id="pwd" style="width:80%;">
+        <button type="button" class="btn btn-primary btn-lg btn-block" style="width:20%;">SUBMIT</button>
     </div>
 
     <br />
@@ -22,28 +23,26 @@
         <h4 class="text-center"> Scroll up and down to control your paddle. Your name will appear on the display when it's your turn.</h4>
     </div>
 
-    <script type="text/javascript"> 
+    <script type="text/javascript">
 
-    document.onscroll = function () { myFunction() };
+        document.onscroll = function () { myFunction() };
 
-    function myFunction() {
+        function myFunction() {
 
-        var doc = document.documentElement;
-        var scr = ((window.pageYOffset - doc.clientTop) / (doc.scrollHeight - doc.clientHeight)) * 200 - 100;
+            var doc = document.documentElement;
+            var scr = ((window.pageYOffset - doc.clientTop) / (doc.scrollHeight - doc.clientHeight)) * 200 - 100;
 
-        if (scr > -15 && scr < 15)
-        {
-            scr = 0;
+            if (scr > -25 && scr < 25) {
+                scr = 0;
+            }
+
+            window.console.log(scr);
         }
-
-        window.console.log(scr); 
-    }
     </script>
 
-</html>
-
-
 </body>
+
+</html>
 
 <!--    <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
