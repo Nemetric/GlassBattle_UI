@@ -2,28 +2,50 @@
 
 <html>
 
-<head>
+<h1 class="text-center">GlassBattle Controls</h1>
+<h3 class="text-center">Enter your username and wait your turn on the display.</h3>
+<h3 class="text-center">Use the scrollbar to control your paddle.</h3>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title></title>
-	<meta charset="utf-8" />
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<body style="background-color:whitesmoke; height:50em;">
 
-</head>
+    <div class="col-lg-6">
+        <br />
+        <h4 class="text-center">Type your name here.</h4>
+        <input type="password" class="form-control" id="pwd" style="width:100%;">
+    </div>
 
-<body style="background-color:slategrey;">
+    <br />
+    <br />
 
-    <div class="row">
+    <div class="col-lg-6 panel panel-default">
+        <h4 class="text-center"> Scroll up and down to control your paddle. Your name will appear on the display when it's your turn.</h4>
+    </div>
+
+    <script type="text/javascript"> 
+
+    document.onscroll = function () { myFunction() };
+
+    function myFunction() {
+
+        var doc = document.documentElement;
+        var scr = ((window.pageYOffset - doc.clientTop) / (doc.scrollHeight - doc.clientHeight)) * 200 - 100;
+
+        if (scr > -15 && scr < 15)
+        {
+            scr = 0;
+        }
+
+        window.console.log(scr); 
+    }
+    </script>
+
+</html>
+
+
+</body>
+
+<!--    <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
             <br />
             <select class="form-control">
@@ -58,9 +80,9 @@
         </div>
     </div>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
         <script src="js/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
+
         <script src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
@@ -76,7 +98,7 @@
                 alert(text);
 
                 var url = "http://localhost:58592/ui/ChangeColor/" + id + "?color=" + encodeURIComponent(color) + "&text=" + encodeURIComponent(Text);
-                
+
                 $.get(url, function (data) {
                     alert(data);
                 });
@@ -85,8 +107,18 @@
 
         });
 
-    </script>
+    </script> -->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title></title>
+<meta charset="utf-8" />
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
-</body>
-
-</html>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
