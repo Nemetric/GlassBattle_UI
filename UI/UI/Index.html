@@ -11,9 +11,10 @@
 
     <div class="col-lg-6">
         <br />
-        <h4 class="text-center">Type your name here.</h4>
-        <input type="text" class="form-control" id="pwd" style="width:80%;">
-        <button type="button" class="btn btn-primary btn-lg btn-block" style="width:20%;">SUBMIT</button>
+        <h4 class="text-center">Type your name here. Hit enter to submit.</h4>
+
+        <input id="namnam" type="text" class="form-control col-sm-3" style="width:100%;" maxlength="10">
+
     </div>
 
     <br />
@@ -30,10 +31,17 @@
         function myFunction() {
 
             var doc = document.documentElement;
-            var scr = ((window.pageYOffset - doc.clientTop) / (doc.scrollHeight - doc.clientHeight)) * 200 - 100;
+            var scr = ((window.pageYOffset - doc.clientTop) / (doc.scrollHeight - doc.clientHeight)) * -200 - 100;
 
             if (scr > -25 && scr < 25) {
                 scr = 0;
+            }
+
+            if (namnam.disabled == false && namnam.value != '')
+            {
+                namnam.disabled = true;
+                var username = namnam.value;
+                window.console.log(username);
             }
 
             window.console.log(scr);
